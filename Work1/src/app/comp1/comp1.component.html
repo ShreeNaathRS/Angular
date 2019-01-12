@@ -1,0 +1,49 @@
+<!-- Interpolation and attribute binding -->
+<p title = "{{title}}" [attr.name] = "shree">Check title</p>
+
+<!-- Two Way Data Binding -->
+<input type="number" [(ngModel)]=shree>
+
+<!-- Class Binding -->
+<p [class.size]="true">Shree</p>
+
+<!-- NGClassBinding -->
+<p [ngClass] = "['size','color']"> Shree</p>
+<p [ngClass] = "{'size':false,'color':true}"> Shree</p>
+
+<!-- Style Binding -->
+<p [style.color] = "'red'">Shree</p>
+
+<!-- NgStyle Binding -->
+<p [ngStyle]="{'color':'red','background-color':'grey'}">Shree</p>
+
+<!-- Event Binding -->
+<input type="button" (click) = 'ngOnInit()' value = "Pls Click">
+<br>
+<br>
+<!-- Template Reference -->
+<input type="text" #inputRef id = "Template Reference">
+<input type="button" (click) = "inputReference(inputRef)" value = "Temp Ref">
+
+<!-- Structural Directives -->
+<!-- if,pipe -->
+<p *ngIf = "1>2 else elBlk">If block</p>
+<ng-template #elBlk>
+{{'elseBlock'|uppercase}}
+{{ 5.446 | number : '2.2-3' }}
+{{ 5.446 | percent : '2.2-3' }}
+{{ 5.446 | currency : 'INR' : 'symbol' }}
+{{ {name : 'shree'} | json }}
+{{ dt | date : 'dd-MM-yyyy' }}
+{{ {name : 'shree'} | keyvalue | json }}
+</ng-template>
+<!--for-->
+<p *ngFor="let a of ary;let i = index">{{a}}-{{i}}</p>
+<!-- switch -->
+<div ngSwitch="{{option}}">
+<div *ngSwitchCase=1>
+    case1
+</div>
+<p *ngSwitchCase=2>switch 2</p>
+<p *ngSwitchDefault> default</p>
+</div>
